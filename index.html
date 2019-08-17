@@ -2,51 +2,365 @@
 <html>
 
 <head>
-    <title>いらっしゃい</title>
+    <title>thrfa</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: monospace;
+            color: #33ff33;
+        }
+
         body {
+            background-color: black;
+            font-size: 18px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            /*            text-decoration: underline;*/
+        }
+
+        a:visited {
+            color: #33ff33;
+        }
+
+        img {
+            border: 0;
+        }
+
+        #main_header {
             width: 960px;
             margin: 0 auto;
+
+            height: 160px;
+            position: relative;
         }
 
-        #aside {
-            width: 200px;
-            float: left;
+        #main_header>#title {
+            position: absolute;
+            left: 20px;
+            top: 30px;
         }
 
-        #section {
-            width: 760px;
-            float: left;
+        #main_header>#gnb {
+            position: absolute;
+            right: 0;
+            top: 0;
         }
 
-        /** One True Layout */
-        #wrap {
+        #main_header>#lnb {
+            position: absolute;
+            right: 0;
+            bottom: 10px;
+        }
+
+        #gnb>ul {
             overflow: hidden;
+        }
+
+        #gnb>ul>li {
+            float: left;
+        }
+
+        #gnb>ul>li>a {
+            /* button click */
+            display: block;
+            padding: 2px 10px;
+
+            border: thin solid #33ff33;
+        }
+
+        #lnb>ul {
+            overflow: hidden;
+        }
+
+        #lnb>ul>li {
+            float: left;
+        }
+
+        #lnb>ul>li>a {
+            display: block;
+            padding: 10px 20px;
+            border-width: 1px;
+            border: thin solid #33ff33;
+        }
+
+        #content {
+            width: 960px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        #content>#main_section {
+            width: 750px;
+            float: left;
+        }
+
+        #content>#main_aside {
+            width: 200px;
+            float: right;
+        }
+
+        #main_section>.main_article {
+            margin-bottom: 10px;
+            padding: 20px;
+            border: thin solid #33ff33;
+        }
+
+        input:nth-of-type(1) {
+            display: none;
+        }
+
+        input:nth-of-type(1)~div:nth-of-type(1) {
+            display: none;
+        }
+
+        input:nth-of-type(1):checked~div:nth-of-type(1) {
+            display: block;
+        }
+
+        input:nth-of-type(2) {
+            display: none;
+        }
+
+        input:nth-of-type(2)~div:nth-of-type(2) {
+            display: none;
+        }
+
+        input:nth-of-type(2):checked~div:nth-of-type(2) {
+            display: block;
+        }
+
+        section.spheres {
+            overflow: hidden;
+        }
+
+        section.spheres>label {
+            display: block;
+            float: left;
+
+            width: 100px;
+            height: 30px;
+            line-height: 26px;
+            text-align: center;
+
+            box-sizing: border-box;
+            border: thin solid #33ff33;
+        }
+
+        input:nth-of-type(1):checked~section.spheres>label:nth-of-type(1) {
+            line-height: 34px;
+        }
+
+        input:nth-of-type(2):checked~section.spheres>label:nth-of-type(2) {
+            line-height: 34px;
+        }
+
+        .item {
+            overflow: hidden;
+            padding: 10px;
+            border: thin solid #33ff33;
+            border-top: none;
+        }
+
+        .thumbnail {
+            float: left;
+        }
+
+        .description {
+            float: left;
+            margin-left: 10px;
+        }
+
+        .description>strong, .description>p {
+            display: block;
+            width: 120px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        #main_footer {
+            width: 960px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+
+            box-sizing: border-box;
+            padding: 10px;
+            border: thin solid #33ff33;
+
+            text-align: center;
         }
 
     </style>
 </head>
 
 <body>
-    <div id="header">
-        <h1>ヘッダー</h1>
-    </div>
-    <div id="navigation">
-        <h1>ナビゲーション</h1>
-    </div>
-    <div id="wrap">
-        <div id="aside">
-            <h1>アサイド</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Congue quisque egestas diam in arcu. Nam aliquam sem et tortor consequat. Vitae et leo duis ut diam quam nulla porttitor. Lorem dolor sed viverra ipsum nunc aliquet bibendum. Est ante in nibh mauris cursus mattis molestie a. Est ultricies integer quis auctor elit sed vulputate mi.</p>
+    <header id="main_header">
+        <div id="title">
+            <h1>thrfa</h1>
+            <h2>thread_factory</h2>
         </div>
-        <div id="section">
-            <h1>セクション</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Congue quisque egestas diam in arcu. Nam aliquam sem et tortor consequat. Vitae et leo duis ut diam quam nulla porttitor. Lorem dolor sed viverra ipsum nunc aliquet bibendum. Est ante in nibh mauris cursus mattis molestie a. Est ultricies integer quis auctor elit sed vulputate mi.</p>
-        </div>
+
+        <nav id="gnb">
+            <ul>
+                <li><a href="#">auth</a></li>
+                <li><a href="#">logger</a></li>
+                <li><a href="#">usage</a></li>
+            </ul>
+        </nav>
+
+        <nav id="lnb">
+            <ul>
+                <li><a href="irasshai.html">irasshai</a></li>
+                <li><a href="irasshai.html">number_zero</a></li>
+                <li><a href="irasshai.html">make_a_thread</a></li>
+                <li><a href="irasshai.html">find</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="content">
+        <section id="main_section">
+            <article class="main_article">
+                <h1>project</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum odio eu feugiat pretium. Sagittis id consectetur purus ut faucibus pulvinar elementum integer enim. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Semper auctor neque vitae tempus quam pellentesque nec nam. In mollis nunc sed id semper risus. Et netus et malesuada fames ac turpis egestas. Facilisis volutpat est velit egestas dui. Ut placerat orci nulla pellentesque dignissim enim sit amet. Tellus integer feugiat scelerisque varius morbi enim. Lacus sed turpis tincidunt id aliquet risus. Arcu vitae elementum curabitur vitae nunc sed velit dignissim. Sollicitudin nibh sit amet commodo nulla facilisi. Pulvinar pellentesque habitant morbi tristique senectus et. Lorem ipsum dolor sit amet consectetur adipiscing elit duis tristique. Fringilla est ullamcorper eget nulla.</p>
+            </article>
+            <article class="main_article">
+                <h1>work</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum odio eu feugiat pretium. Sagittis id consectetur purus ut faucibus pulvinar elementum integer enim. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Semper auctor neque vitae tempus quam pellentesque nec nam. In mollis nunc sed id semper risus. Et netus et malesuada fames ac turpis egestas. Facilisis volutpat est velit egestas dui. Ut placerat orci nulla pellentesque dignissim enim sit amet. Tellus integer feugiat scelerisque varius morbi enim. Lacus sed turpis tincidunt id aliquet risus. Arcu vitae elementum curabitur vitae nunc sed velit dignissim. Sollicitudin nibh sit amet commodo nulla facilisi. Pulvinar pellentesque habitant morbi tristique senectus et. Lorem ipsum dolor sit amet consectetur adipiscing elit duis tristique. Fringilla est ullamcorper eget nulla.</p>
+            </article>
+            <article class="main_article">
+                <h1>study</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum odio eu feugiat pretium. Sagittis id consectetur purus ut faucibus pulvinar elementum integer enim. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Semper auctor neque vitae tempus quam pellentesque nec nam. In mollis nunc sed id semper risus. Et netus et malesuada fames ac turpis egestas. Facilisis volutpat est velit egestas dui. Ut placerat orci nulla pellentesque dignissim enim sit amet. Tellus integer feugiat scelerisque varius morbi enim. Lacus sed turpis tincidunt id aliquet risus. Arcu vitae elementum curabitur vitae nunc sed velit dignissim. Sollicitudin nibh sit amet commodo nulla facilisi. Pulvinar pellentesque habitant morbi tristique senectus et. Lorem ipsum dolor sit amet consectetur adipiscing elit duis tristique. Fringilla est ullamcorper eget nulla.</p>
+            </article>
+        </section>
+
+        <aside id="main_aside">
+            <input id="private" type="radio" name="tab" checked />
+            <input id="public" type="radio" name="tab" />
+            <section class="spheres">
+                <label for="private">private</label>
+                <label for="public">public</label>
+            </section>
+
+            <div class="tab_item">
+                <ul>
+                    <li class="item">
+                        <a href="#">
+                            <div class="thumbnail">
+                                <img src="https://avatars1.githubusercontent.com/u/45908364" width="
+                                                                                                45" height="45" />
+                            </div>
+                            <div class="description">
+                                <strong>meal</strong>
+                                <p>08/17 10:15</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <div class="thumbnail">
+                                <img src="https://avatars1.githubusercontent.com/u/45908364" width="
+                                                                                                45" height="45" />
+                            </div>
+                            <div class="description">
+                                <strong>project</strong>
+                                <p>08/17 10:15</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <div class="thumbnail">
+                                <img src="https://avatars1.githubusercontent.com/u/45908364" width="
+                                                                                                45" height="45" />
+                            </div>
+                            <div class="description">
+                                <strong>my_program</strong>
+                                <p>08/17 10:15</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <div class="thumbnail">
+                                <img src="https://avatars1.githubusercontent.com/u/45908364" width="
+                                                                                                45" height="45" />
+                            </div>
+                            <div class="description">
+                                <strong>help</strong>
+                                <p>08/17 10:15</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tab_item">
+                <ul>
+                    <li class="item">
+                        <a href="#">
+                            <div class="thumbnail">
+                                <img src="https://avatars1.githubusercontent.com/u/45908364" width="
+                                                                                                45" height="45" />
+                            </div>
+                            <div class="description">
+                                <strong>request</strong>
+                                <p>08/17 10:15</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <div class="thumbnail">
+                                <img src="https://avatars1.githubusercontent.com/u/45908364" width="
+                                                                                                45" height="45" />
+                            </div>
+                            <div class="description">
+                                <strong>computer</strong>
+                                <p>08/17 10:15</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <div class="thumbnail">
+                                <img src="https://avatars1.githubusercontent.com/u/45908364" width="
+                                                                                                45" height="45" />
+                            </div>
+                            <div class="description">
+                                <strong>network</strong>
+                                <p>08/17 10:15</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <div class="thumbnail">
+                                <img src="https://avatars1.githubusercontent.com/u/45908364" width="
+                                                                                                45" height="45" />
+                            </div>
+                            <div class="description">
+                                <strong>study</strong>
+                                <p>08/17 10:15</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
     </div>
-    <div id="footer">
-        <h1>フッター</h1>
-    </div>
+
+    <footer id="main_footer">
+        <h3>chan</h3>
+        <address>github</address>
+    </footer>
 </body>
 
 </html>
