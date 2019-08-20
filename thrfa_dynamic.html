@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>thrfa_dynamic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background: black;
+            color: #33ff33;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            min-width: 760px;
+        }
+
+        #main_header {
+            height: 60px;
+            line-height: 60px;
+            padding-left: 10px;
+            border-bottom: thin solid #33ff33;
+        }
+
+        #main_gnb {
+            overflow: hidden;
+            border-bottom: thin solid #33ff33;
+        }
+
+        #main_gnb>ul.left {
+            overflow: hidden;
+            float: left;
+        }
+
+        #main_gnb>ul.right {
+            overflow: hidden;
+            float: right;
+        }
+
+        #main_gnb>ul.left>li {
+            float: left;
+        }
+
+        #main_gnb>ul.right>li {
+            float: left;
+        }
+
+        #main_gnb a {
+            display: block;
+            padding: 10px 20px;
+
+            border-left: thin solid #33ff33;
+            border-right: thin solid #33ff33;
+            font-weight: bold;
+        }
+
+        #wrap {
+            overflow: hidden;
+        }
+
+        #wrap>#main_lnb {
+            float: left;
+            width: 200px;
+        }
+
+        #wrap>#content_wrap {
+            float: left;
+            width: 100%;
+/*            margin-left: 200px;*/
+            margin-right: -200px;
+
+        }
+
+        #wrap>#content_wrap>#content {
+            padding-right: 190px;
+        }
+
+        #main_lnb>ul>li>a {
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            padding-left: 15px;
+/*            margin-right: 25px;*/
+            border-bottom: thin solid #33ff33;
+            font-weight: bold;
+        }
+        
+        #content {
+            border-left: thin solid #33ff33;
+        }
+        
+        article {
+            padding: 10px;
+/*            padding-right: 100px;*/
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header id="main_header">
+        <h1>thrfa_dynamic</h1>
+    </header>
+
+    <nav id="main_gnb">
+        <ul class="left">
+            <li><a href="#">left</a></li>
+            <li><a href="#">left</a></li>
+            <li><a href="#">left</a></li>
+            <li><a href="#">left</a></li>
+            <li><a href="#">left</a></li>
+            <li><a href="#">left</a></li>
+        </ul>
+        <ul class="right">
+            <li><a href="#">right</a></li>
+            <li><a href="#">right</a></li>
+        </ul>
+    </nav>
+
+    <div id="wrap">
+        <nav id="main_lnb">
+            <ul class="left">
+                <li><a href="index.html">index</a></li>
+                <li><a href="thrfa_mobile.html">mobile</a></li>
+                <li><a href="playground.html">playground</a></li>
+                <li><a href="irasshai.html">irasshai</a></li>
+                <li><a href="#">lnb</a></li>
+            </ul>
+        </nav>
+        <div id="content_wrap">
+            <div id="content">
+                <article>
+                    <h1>Lorem ipsum dolor sit amet</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum odio eu feugiat pretium. Sagittis id consectetur purus ut faucibus pulvinar elementum integer enim. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Semper auctor neque vitae tempus quam pellentesque nec nam. In mollis nunc sed id semper risus.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum odio eu feugiat pretium. Sagittis id consectetur purus ut faucibus pulvinar elementum integer enim. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Semper auctor neque vitae tempus quam pellentesque nec nam. In mollis nunc sed id semper risus.</p>
+                </article>
+                <article>
+                    <h1>Lorem ipsum dolor sit amet</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum odio eu feugiat pretium. Sagittis id consectetur purus ut faucibus pulvinar elementum integer enim. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Semper auctor neque vitae tempus quam pellentesque nec nam. In mollis nunc sed id semper risus.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum odio eu feugiat pretium. Sagittis id consectetur purus ut faucibus pulvinar elementum integer enim. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Semper auctor neque vitae tempus quam pellentesque nec nam. In mollis nunc sed id semper risus.</p>
+                </article>
+                <article>
+                    <h1>Lorem ipsum dolor sit amet</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum odio eu feugiat pretium. Sagittis id consectetur purus ut faucibus pulvinar elementum integer enim. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Semper auctor neque vitae tempus quam pellentesque nec nam. In mollis nunc sed id semper risus.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum odio eu feugiat pretium. Sagittis id consectetur purus ut faucibus pulvinar elementum integer enim. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Semper auctor neque vitae tempus quam pellentesque nec nam. In mollis nunc sed id semper risus.</p>
+                </article>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

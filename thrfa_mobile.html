@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>thrfa_mobile</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cutive Mono', monospace, sans-serif;
+            color: #33ff33;
+            font-style: normal;
+        }
+
+        body {
+            background-color: black;
+            font-size: 18px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #main_header {
+            height: 45px;
+            /*            border: thin solid #33ff33;*/
+
+            position: relative;
+            text-align: center;
+            line-height: 45px;
+            
+            border-bottom: thin solid #33ff33;
+        }
+
+        #main_header>h1 {}
+
+        #main_header>a,
+        #main_header>label {
+            display: block;
+            height: 32px;
+            line-height: 32px;
+            position: absolute;
+        }
+
+        #main_header>a.left {
+            width: 62px;
+            left: 5px;
+            top: 7px;
+/*            text-align-last: center;*/
+            /*     62       text-indent: -5000px;*/
+        }
+
+        #main_header>label.right {
+            width: 62px;
+            right: 5px;
+            top: 7px;
+            /*      32      text-indent: -5000px;*/
+        }
+
+        #toggle {
+            display: none;
+        }
+
+        #toggle+#wrap>#toggle_gnb_wrap {
+            display: none;
+        }
+
+        #toggle:checked+#wrap>#toggle_gnb_wrap {
+            display: block;
+        }
+
+        #toggle_gnb_wrap {
+            /*            background: #33ff33;*/
+/*
+            border-top-style: solid;
+            border-top-width: thin;
+            border-top-color: #33ff33;
+*/
+/*            border-top: thin solid #33ff33;*/
+            border-bottom: thin solid #33ff33;
+            padding: 10px;
+        }
+
+        #toggle_gnb {
+            background: black;
+            padding: 5px;
+        }
+        
+        #toggle_gnb>ul {
+            overflow: hidden;
+        }
+        
+        #toggle_gnb>ul>li {
+            width: 80px;
+            float: left;
+        }
+        
+        #gnb {
+            overflow: hidden;
+/*            border-top: thin solid #33ff33;*/
+            border-bottom: thin solid #33ff33;
+        }
+        
+        #gnb>div>a {
+            float: left;
+            width: 25%;
+            
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+        }
+        
+        #section_header {
+            padding: 20px;
+        }
+
+        #section_article {
+            padding: 10px;
+        }
+        
+        #main_footer {
+            padding: 10px;
+            border-top: thin solid #33ff33;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <input id="toggle" type="checkbox" />
+    <div id="wrap">
+        <header id="main_header">
+            <a class="left" href="#">main</a>
+            <h1>thrfa</h1>
+            <label class="right" for="toggle">list</label>
+        </header>
+
+        <div id="toggle_gnb_wrap">
+            <div id="toggle_gnb">
+                <ul>
+                    <li><a href="index.html">index</a></li>
+                    <li><a href="#">button</a></li>
+                    <li><a href="#">button</a></li>
+                    <li><a href="#">button</a></li>
+                    <li><a href="#">button</a></li>
+                    <li><a href="#">button</a></li>
+                    <li><a href="#">button</a></li>
+                    <li><a href="#">button</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <nav id="gnb">
+            <div>
+                <a href="irasshai.html">irasshai</a>
+            </div>
+            <div>
+                <a href="#">gnb</a>
+            </div>
+            <div>
+                <a href="#">gnb</a>
+            </div>
+            <div>
+                <a href="#">gnb</a>
+            </div>
+        </nav>
+        
+        <section id="main_section">
+            <header id="section_header">
+                <h1>game</h1>
+                <time>08/18 10:15</time>
+            </header>
+            <article id="section_article">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum odio eu feugiat pretium. Sagittis id consectetur purus ut faucibus pulvinar elementum integer enim. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Semper auctor neque vitae tempus quam pellentesque nec nam. In mollis nunc sed id semper risus. Et netus et malesuada fames ac turpis egestas.</p>
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum odio eu feugiat pretium. Sagittis id consectetur purus ut faucibus pulvinar elementum integer enim. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Semper auctor neque vitae tempus quam pellentesque nec nam. In mollis nunc sed id semper risus. Et netus et malesuada fames ac turpis egestas.</p>
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum odio eu feugiat pretium. Sagittis id consectetur purus ut faucibus pulvinar elementum integer enim. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Semper auctor neque vitae tempus quam pellentesque nec nam. In mollis nunc sed id semper risus. Et netus et malesuada fames ac turpis egestas.</p>
+            </article>
+        </section>
+        
+        <footer id="main_footer">
+            <h3>chan</h3>
+            <address>github</address>
+        </footer>
+    </div>
+</body>
+
+</html>
