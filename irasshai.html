@@ -4,6 +4,16 @@
 <head>
     <title>いらっしゃい</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html,
+        body {
+            height: 100%;
+        }
+
         body {
             width: 960px;
             margin: 0 auto;
@@ -24,10 +34,77 @@
             overflow: hidden;
         }
 
+        #top_bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background: skyblue;
+        }
+        
+        #left_bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            
+            width: 50px;
+            line-height: 50px;
+            writing-mode: vertical-rl;
+            text-align: center;
+            background: gray;
+        }
+        
+        #right_bar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            
+            width: 50px;
+            line-height: 50px;
+            writing-mode: vertical-rl;
+            text-align: center;
+            background: gray;
+        }
+        
+        #bottom_bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background: skyblue;
+        }
+
     </style>
 </head>
 
 <body>
+
+    <div id="top_bar">
+        <h1>上バー</h1>
+    </div>
+
+    <div id="left_bar">
+        <h1>左バー</h1>
+    </div>
+
+    <div id="right_bar">
+        <h1>右バー</h1>
+    </div>
+
+    <div id="bottom_bar">
+        <h1>下バー</h1>
+    </div>
+
     <div id="header">
         <h1>ヘッダー</h1>
     </div>
@@ -41,7 +118,19 @@
         </div>
         <div id="section">
             <h1>セクション</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Congue quisque egestas diam in arcu. Nam aliquam sem et tortor consequat. Vitae et leo duis ut diam quam nulla porttitor. Lorem dolor sed viverra ipsum nunc aliquet bibendum. Est ante in nibh mauris cursus mattis molestie a. Est ultricies integer quis auctor elit sed vulputate mi.</p>
+            `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cras sed felis eget velit aliquet sagittis id. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque. Nibh venenatis cras sed felis eget velit aliquet sagittis id. Vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Phasellus egestas tellus rutrum tellus. Sapien faucibus et molestie ac feugiat sed lectus vestibulum. Aliquam id diam maecenas ultricies mi eget. In massa tempor nec feugiat nisl pretium. Purus non enim praesent elementum facilisis leo vel fringilla.
+
+                Malesuada fames ac turpis egestas maecenas. Morbi tincidunt ornare massa eget egestas purus. Nunc lobortis mattis aliquam faucibus purus. Enim lobortis scelerisque fermentum dui. A pellentesque sit amet porttitor. Enim praesent elementum facilisis leo vel. Non curabitur gravida arcu ac tortor dignissim. Commodo viverra maecenas accumsan lacus vel facilisis volutpat. Ultricies lacus sed turpis tincidunt id. Vitae tempus quam pellentesque nec. Purus ut faucibus pulvinar elementum integer enim neque. Proin nibh nisl condimentum id venenatis a condimentum. Nunc mattis enim ut tellus elementum. Id nibh tortor id aliquet lectus. Suspendisse ultrices gravida dictum fusce ut placerat orci.
+
+                Amet facilisis magna etiam tempor orci eu lobortis. Sodales neque sodales ut etiam sit amet nisl purus. Odio morbi quis commodo odio aenean sed adipiscing diam. Quis ipsum suspendisse ultrices gravida dictum fusce. Cras adipiscing enim eu turpis egestas pretium aenean pharetra magna. Tellus integer feugiat scelerisque varius morbi enim. Dignissim diam quis enim lobortis. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu. Molestie at elementum eu facilisis sed. Sem et tortor consequat id porta nibh venenatis. Mi in nulla posuere sollicitudin aliquam ultrices sagittis. Quis risus sed vulputate odio ut enim blandit volutpat maecenas. Pellentesque sit amet porttitor eget dolor morbi non.
+
+                Eget nunc scelerisque viverra mauris in aliquam sem. Morbi tempus iaculis urna id. Erat velit scelerisque in dictum non consectetur a erat. Diam quis enim lobortis scelerisque. Posuere lorem ipsum dolor sit amet. Nullam non nisi est sit amet facilisis magna etiam. Vitae turpis massa sed elementum tempus. Cursus euismod quis viverra nibh cras pulvinar mattis nunc. Donec ac odio tempor orci dapibus ultrices in. Aenean euismod elementum nisi quis eleifend quam adipiscing. Volutpat blandit aliquam etiam erat velit scelerisque in dictum non. Netus et malesuada fames ac turpis egestas sed tempus. Sit amet nisl suscipit adipiscing bibendum est. In ante metus dictum at tempor commodo ullamcorper.
+
+                Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla. Faucibus nisl tincidunt eget nullam. At ultrices mi tempus imperdiet nulla. Habitant morbi tristique senectus et netus et malesuada fames. Justo eget magna fermentum iaculis eu non diam. Id cursus metus aliquam eleifend. Sit amet risus nullam eget felis eget nunc lobortis mattis. Non pulvinar neque laoreet suspendisse interdum. Bibendum ut tristique et egestas quis. Enim nulla aliquet porttitor lacus luctus accumsan. Sodales ut eu sem integer vitae justo eget magna. Laoreet sit amet cursus sit amet dictum sit amet. Lectus magna fringilla urna porttitor rhoncus dolor. Eget est lorem ipsum dolor sit. In egestas erat imperdiet sed. Enim nulla aliquet porttitor lacus. Vitae justo eget magna fermentum iaculis eu.
+
+                Sit amet aliquam id diam maecenas ultricies mi eget. Neque gravida in fermentum et sollicitudin. Et leo duis ut diam. Aliquam nulla facilisi cras fermentum odio. Enim nec dui nunc mattis. Porta nibh venenatis cras sed. Eu lobortis elementum nibh tellus molestie. Rhoncus dolor purus non enim praesent. Scelerisque in dictum non consectetur a erat nam at. Duis ut diam quam nulla.
+
+                Vulputate dignissim suspendisse in est. Et netus et malesuada fames ac turpis egestas sed tempus. Venenatis a condimentum vitae sapien pellentesque habitant. Ut venenatis tellus in metus vulputate eu scelerisque. Nullam eget felis eget nunc lobortis. Ullamcorper malesuada proin libero nunc consequat interdum varius sit amet. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Eget est lorem ipsum dolor sit amet consectetur adipiscing. Velit ut tortor pretium viverra. Nec feugiat nisl pretium fusce id velit ut tortor. Bibendum neque egestas congue quisque egestas diam in arcu cursus. Velit euismod in pellentesque massa placerat duis ultricies. Mauris in aliquam sem fringilla ut morbi tincidunt augue. Orci sagittis eu volutpat odio facilisis. In fermentum posuere urna nec. Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant. Nisl condimentum id venenatis a condimentum. Mattis vulputate enim nulla aliquet porttitor. Senectus et netus et malesuada fames ac.</p>
         </div>
     </div>
     <div id="footer">
