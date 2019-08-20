@@ -2,13 +2,16 @@
 <html>
 
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap" rel="stylesheet">
+    
     <title>thrfa</title>
     <style>
         * {
             margin: 0;
             padding: 0;
-            font-family: monospace;
+            font-family: 'Cutive Mono', monospace, sans-serif;
             color: #33ff33;
+            font-style: normal;
         }
 
         body {
@@ -22,7 +25,6 @@
 
         a {
             text-decoration: none;
-            /*            text-decoration: underline;*/
         }
 
         a:visited {
@@ -65,14 +67,20 @@
 
         #gnb>ul>li {
             float: left;
+            
+            border-top: thin solid #33ff33;
+            border-bottom: thin solid #33ff33;
+            border-left: thin solid #33ff33;
         }
 
         #gnb>ul>li>a {
             /* button click */
             display: block;
             padding: 2px 10px;
-
-            border: thin solid #33ff33;
+        }
+        
+        #gnb>ul>li:last-child {
+            border-right: thin solid #33ff33;
         }
 
         #lnb>ul {
@@ -81,13 +89,20 @@
 
         #lnb>ul>li {
             float: left;
+            
+            border-top: thin solid #33ff33;
+            border-bottom: thin solid #33ff33;
+            border-left: thin solid #33ff33;
+        }
+        
+        #lnb>ul>li:last-child {
+            border-right: thin solid #33ff33;
         }
 
         #lnb>ul>li>a {
             display: block;
             padding: 10px 20px;
             border-width: 1px;
-            border: thin solid #33ff33;
         }
 
         #content {
@@ -150,7 +165,13 @@
             text-align: center;
 
             box-sizing: border-box;
-            border: thin solid #33ff33;
+            border-top: thin solid #33ff33;
+            border-bottom: thin solid #33ff33;
+            border-left: thin solid #33ff33;
+        }
+        
+        section.spheres>label:nth-of-type(2) {
+            border-right: thin solid #33ff33;
         }
 
         input:nth-of-type(1):checked~section.spheres>label:nth-of-type(1) {
@@ -177,7 +198,15 @@
             margin-left: 10px;
         }
 
-        .description>strong, .description>p {
+        .description>p:nth-of-type(1) {
+            display: block;
+            width: 120px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 120%;
+        }
+        .description>p:nth-of-type(2) {
             display: block;
             width: 120px;
             white-space: nowrap;
@@ -196,6 +225,12 @@
 
             text-align: center;
         }
+        
+        h1 {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 150%;
+        }
 
     </style>
 </head>
@@ -209,16 +244,16 @@
 
         <nav id="gnb">
             <ul>
-                <li><a href="#">auth</a></li>
-                <li><a href="#">logger</a></li>
-                <li><a href="#">usage</a></li>
+                <li><a href="playground.html">auth</a></li>
+                <li><a href="#">log</a></li>
+                <li><a href="thrfa_dynamic.html">dynamic</a></li>
             </ul>
         </nav>
 
         <nav id="lnb">
             <ul>
                 <li><a href="irasshai.html">irasshai</a></li>
-                <li><a href="irasshai.html">number_zero</a></li>
+                <li><a href="thrfa_mobile.html">mobile</a></li>
                 <li><a href="irasshai.html">make_a_thread</a></li>
                 <li><a href="irasshai.html">find</a></li>
             </ul>
@@ -258,7 +293,19 @@
                                                                                                 45" height="45" />
                             </div>
                             <div class="description">
-                                <strong>meal</strong>
+                                <p>meal</p>
+                                <p>08/17 10:15</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <div class="thumbnail">
+                                <img src="https://avatars1.githubusercontent.com/u/45908364" width="
+                                                                                                45" height= "45" />
+                            </div>
+                            <div class="description">
+                                <p>project</p>
                                 <p>08/17 10:15</p>
                             </div>
                         </a>
@@ -270,7 +317,7 @@
                                                                                                 45" height="45" />
                             </div>
                             <div class="description">
-                                <strong>project</strong>
+                                <p>my_program</p>
                                 <p>08/17 10:15</p>
                             </div>
                         </a>
@@ -282,19 +329,7 @@
                                                                                                 45" height="45" />
                             </div>
                             <div class="description">
-                                <strong>my_program</strong>
-                                <p>08/17 10:15</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="#">
-                            <div class="thumbnail">
-                                <img src="https://avatars1.githubusercontent.com/u/45908364" width="
-                                                                                                45" height="45" />
-                            </div>
-                            <div class="description">
-                                <strong>help</strong>
+                                <p>help</p>
                                 <p>08/17 10:15</p>
                             </div>
                         </a>
@@ -311,7 +346,7 @@
                                                                                                 45" height="45" />
                             </div>
                             <div class="description">
-                                <strong>request</strong>
+                                <p>request</p>
                                 <p>08/17 10:15</p>
                             </div>
                         </a>
@@ -323,7 +358,7 @@
                                                                                                 45" height="45" />
                             </div>
                             <div class="description">
-                                <strong>computer</strong>
+                                <p>computer</p>
                                 <p>08/17 10:15</p>
                             </div>
                         </a>
@@ -335,7 +370,7 @@
                                                                                                 45" height="45" />
                             </div>
                             <div class="description">
-                                <strong>network</strong>
+                                <p>network</p>
                                 <p>08/17 10:15</p>
                             </div>
                         </a>
@@ -347,7 +382,7 @@
                                                                                                 45" height="45" />
                             </div>
                             <div class="description">
-                                <strong>study</strong>
+                                <p>study</p>
                                 <p>08/17 10:15</p>
                             </div>
                         </a>
