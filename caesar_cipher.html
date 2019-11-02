@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>シーザー暗号</title>
+    <script>
+        window.onload = function() {
+            var encryptor = new Encryptor();
+            
+            document.getElementById("encrypt").onclick = function() {
+                var keyword = document.getElementById("keyword").value;
+                var plaintext = document.getElementById("plaintext").value;
+                document.getElementById("ciphertext").value = encryptor.encrypt(plaintext, keyword);
+            };
+            
+            document.getElementById("decrypt").onclick = function() {
+                var keyword = document.getElementById("keyword").value;
+                var ciphertext = document.getElementById("ciphertext").value;
+                document.getElementById("plaintext").value = encryptor.decrypt(ciphertext, keyword);
+            };
+        };
+        
+        function Encryptor() {
+            this.chars = [];
+            for (let c = "A".charCodeAt(0); c <= "Z".charCodeAt(0); c++) {
+                this.chars.push(String.fromCharCode(c));
+            }
+        }
+
+        Encryptor.prototype.numberOf = function(char) {
+            return char.charCodeAt(0) - "A".charCodeAt(0);
+        };
+        
+        Encryptor.prototype.shift = function(char, distance) {
+            var num = this.numberOf(char);
+            num = (num + distance + this.chars.length) % this.chars.length;
+            return this.chars[num];
+        };
+        
+        Encryptor.prototype.encrypt = function(plaintext, keyword) {
+            var ciphertext = "";
+            for (let i = 0, k = 0; i < plaintext.length; i++, k++) {
+                k %= keyword.length;
+                let shift = this.numberOf(keyword[k]);
+                ciphertext += this.shift(plaintext[i], shift);
+            }
+            return ciphertext;
+        };
+        
+        Encryptor.prototype.decrypt = function(ciphertext, keyword) {
+            var plaintext = "";
+            for (let i = 0, k = 0; i < ciphertext.length; i++, k++) {
+                k %= keyword.length;
+                let shift = this.numberOf(keyword[k]) * -1;
+                plaintext += this.shift(ciphertext[i], shift);
+            }
+            return plaintext;
+        };
+
+    </script>
+</head>
+
+<body>
+    <h1>シーザー暗号</h1>
+    <p><em>[A-Z]</em>を使ってください。</p>
+
+    <div>
+        <label>キーワード: <input id="keyword" type="text"></label>
+        <br>
+        <br>
+        <label>平文: <input id="plaintext" type="text"></label> <input id="encrypt" type="button" value="暗号化">
+        <br>
+        <label>暗号文: <input id="ciphertext" type="text"></label> <input id="decrypt" type="button" value="復号化">
+    </div>
+
+</body>
+
+</html>

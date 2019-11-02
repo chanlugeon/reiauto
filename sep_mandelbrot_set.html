@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>マンデルブロー集合</title>
+    <script>
+        window.onload = function() {
+            var canvas = document.getElementById("mycanvas");
+            var ctx = canvas.getContext("2d");
+            var width = canvas.width;
+            var height = canvas.height;
+
+            var centerX = -0.6;
+            var centerY = 0;
+            draw();
+
+            document.getElementById("button").onclick = draw;
+
+            document.getElementById("mycanvas").onclick = function(event) {
+                const mag = parseFloat(document.getElementById("magnification").value);
+                centerX += (2 * event.offsetX / width - 1) / mag;
+                centerY += (2 * event.offsetY / height - 1) / mag;
+                draw();
+            };
+
+            function draw() {
+                const mag = document.getElementById("magnification").value;
+                const iter = document.getElementById("max_iteration").value;
+                displayCenter(centerX, centerY);
+                drawMandelbrot(ctx, centerX, centerY, mag, iter);
+            }
+        };
+
+        function displayCenter(centerX, centerY) {
+            document.getElementById("center_x").innerHTML = centerX.toFixed(3);
+            document.getElementById("center_y").innerHTML = centerY.toFixed(3);
+        }
+
+        function drawMandelbrot(ctx, centerX, centerY, magnification, maxIteration) {
+            var width = ctx.canvas.width;
+            var height = ctx.canvas.height;
+            var xmin = centerX - 1 / magnification;
+            var xmax = centerX + 1 / magnification;
+            var ymin = centerY - (xmax - xmin) * height / width / 2;
+            var ymax = centerY + (xmax - xmin) * height / width / 2;
+            var dw = (xmax - xmin) / width;
+            var dh = (ymax - ymin) / height;
+
+            var color = ["black"];
+            var green = 255;
+            const decrease = 255 / maxIteration;
+            for (let i = maxIteration; i > 0; i--) {
+                color[i] = `rgb(255, ${Math.floor(green)}, 255)`;
+                green -= decrease;
+            }
+
+            for (let i = 0; i < width; i++) {
+                let x = xmin + i * dw;
+                
+                for (let j = 0; j < height; j++) {
+                    let y = ymin + j * dh;
+                    
+                    let a = x;
+                    let b = y;
+                    let a2 = a * a;
+                    let b2 = b * b;
+                    for (var c = maxIteration; a2 + b2 <= 4 && c > 0; c--) {
+                        b = 2 * a * b + y;
+                        a = a2 - b2 + x;
+                        a2 = a * a;
+                        b2 = b * b;
+                    }
+                    
+                    ctx.fillStyle = color[c];
+                    ctx.fillRect(i, j, 1, 1,);
+                }
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <canvas id="mycanvas" width="800" height="640"></canvas>
+    <div>中心座標(<span id="center_x"></span>, <span id="center_y"></span>)</div>
+    <div>
+        <label>倍率: <input id="magnification" type="number" value="0.65"></label>
+        <label>最大反復: <input id="max_iteration" type="number" value="60"></label>
+        <input id="button" type="button" value="Draw">
+    </div>
+</body>
+
+</html>

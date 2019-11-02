@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>サークルの直接</title>
+
+    <script>
+        function drawDiamond(ctx, x, y, radius, point, color) {
+            var points = generatePoints(x, y, radius, point);
+            ctx.strokeStyle = color;
+            ctx.beginPath();
+
+            for (let i = 0; i < point; i++) {
+                for (let j = i + 1; j < point; j++) {
+                    ctx.moveTo(points[i].x, points[i].y);
+                    ctx.lineTo(points[j].x, points[j].y);
+                }
+            }
+
+            ctx.stroke();
+            
+            function generatePoints(x, y, radius, point) {
+                var points = [];
+                for (let i = 0; i < radius; i++) {
+                    var t = i * 2 * Math.PI / point;
+                    points[i] = {
+                        x: x + radius * Math.cos(t),
+                        y: y + radius * Math.sin(t)
+                    }
+                }
+                
+                return points;
+            }
+        }
+
+        window.onload = function() {
+            var canvas = document.getElementById("mycanvas");
+            var ctx = canvas.getContext("2d");
+            drawDiamond(ctx, 170, 170, 150, 6, "darkblue");
+            drawDiamond(ctx, 490, 170, 150, 12, "darkblue");
+            drawDiamond(ctx, 810, 170, 150, 18, "darkblue");
+            drawDiamond(ctx, 170, 490, 150, 24, "darkblue");
+            drawDiamond(ctx, 490, 490, 150, 30, "darkblue");
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <canvas id="mycanvas" width="1000" height="800"></canvas>
+
+</body>
+
+</html>
